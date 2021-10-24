@@ -7,8 +7,8 @@ export interface Cover {
 export interface Book {
   objectId: string;
   pages: number;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   author: string;
   name: string;
   isbn: string;

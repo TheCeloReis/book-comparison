@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
+import BookList from "../components/BookList";
 import CustomError from "../lib/customError";
 import getBooks from "../lib/getBooks";
 import BooksResponse from "../types/BooksResponse";
@@ -23,11 +24,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <ul>
-        {data?.results.map((book) => (
-          <li key={book.objectId}>{book.name}</li>
-        ))}
-      </ul>
+      <BookList books={data?.results ?? []} />
     </div>
   );
 };
