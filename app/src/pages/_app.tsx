@@ -15,8 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SSRProvider>
         <Hydrate state={pageProps.dehydratedState}>
           <GlobalStyle />
-          <ThemeProvider theme={theme} />
-          <Component {...pageProps} />
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
         </Hydrate>
       </SSRProvider>
     </QueryClientProvider>

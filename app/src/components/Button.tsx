@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useButton } from "@react-aria/button";
 
 const StyledButton = styled.button`
-  background: ${(props) => props.theme.colors.main};
+  background: ${({ theme }) => theme.color.primary[500]};
 `;
 
 type BaseProps = Parameters<typeof useButton>[0];
