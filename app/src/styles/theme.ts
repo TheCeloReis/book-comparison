@@ -88,7 +88,7 @@ const theme: DefaultTheme = {
     96: "24rem",
   },
 
-  fontSizes: {
+  fontSize: {
     xs: "0.75rem",
     sm: "0.875rem",
     base: "1rem",
