@@ -1,6 +1,12 @@
 {
-  "extends": ["plugin:testing-library/react", "next/core-web-vitals"],
+  "extends": ["next/core-web-vitals"],
   "rules": {
     "@next/next/no-img-element": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.tsx"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
 }
