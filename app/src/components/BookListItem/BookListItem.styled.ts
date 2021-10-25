@@ -2,21 +2,21 @@ import styled from "styled-components";
 
 export const ListItem = styled.li`
   width: 100%;
-`;
 
-export const Link = styled.a`
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  padding: ${({ theme }) => theme.space[4]};
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  border-radius: ${({ theme }) => theme.space[3]};
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: ${({ theme }) => theme.space[4]};
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    border-radius: ${({ theme }) => theme.space[3]};
 
-  &:hover {
-    background-color: ${({ theme }) => theme.color.gray[100]};
-    border: 1px solid ${({ theme }) => theme.color.primary[200]};
+    &:hover {
+      background-color: ${({ theme }) => theme.color.gray[100]};
+      border: 1px solid ${({ theme }) => theme.color.primary[200]};
+    }
   }
 `;
 

@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import sortByDateString from "../../lib/sortByDateString";
 
 import { Book } from "../../types/BooksResponse";
 import BookListItem from "../BookListItem";
@@ -10,9 +11,11 @@ interface Props {
 }
 
 const BookList: FC<Props> = ({ books }) => {
+  const sortedBooks = sortByDateString(books, "edition");
+
   return (
     <S.List>
-      {books.map((book) => (
+      {sortedBooks.map((book) => (
         <BookListItem key={book.objectId} book={book} />
       ))}
     </S.List>

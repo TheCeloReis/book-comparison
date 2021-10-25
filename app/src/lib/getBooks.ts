@@ -2,7 +2,6 @@ import BooksResponse from "../types/BooksResponse";
 import CustomError from "./customError";
 
 const getBooks = async (): Promise<BooksResponse> => {
-  console.log(`${process.env.NEXT_PUBLIC_API_BASE_URL}/books`);
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/books`);
 
   if (response.status === 200) {

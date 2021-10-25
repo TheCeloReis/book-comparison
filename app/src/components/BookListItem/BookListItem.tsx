@@ -19,7 +19,7 @@ const BookListItem: FC<Props> = ({ book }) => {
           query: { isbn: book.isbn },
         }}
       >
-        <S.Link>
+        <a>
           <S.CoverContainer>
             <S.Cover src={book.cover.url} alt="" />
           </S.CoverContainer>
@@ -35,7 +35,7 @@ const BookListItem: FC<Props> = ({ book }) => {
               totalRatings={book.totalRatings}
             />
           </div>
-        </S.Link>
+        </a>
       </Link>
     </S.ListItem>
   );
