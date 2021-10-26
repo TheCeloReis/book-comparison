@@ -58,9 +58,7 @@ app.get("/api/book/:isbn", async (req, res) => {
     }
 
     res.status(200).send({
-      result: {
-        book: { ...book, goodReads: goodReadsReviews.data.books[0] ?? null },
-      },
+      result: { ...book, goodReads: goodReadsReviews.data.books[0] ?? null },
     });
   } catch {
     res.status(200).send({ result: book });

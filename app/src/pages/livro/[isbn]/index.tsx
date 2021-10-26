@@ -1,6 +1,7 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import { getBook, getBooks } from "../../../lib/api";
 import BookDetails from "../../../components/BookDetails";
@@ -45,6 +46,13 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>BookParison - {data.result.name}</title>
+        <meta
+          name="description"
+          content="Avalie avaliações de livros de forma simples e rápida, sem sair do nosso app."
+        />
+      </Head>
       <BookDetails book={data.result} />
     </div>
   );

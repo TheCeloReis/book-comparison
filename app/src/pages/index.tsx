@@ -1,5 +1,7 @@
 import type { NextPage, GetStaticProps } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
+import Head from "next/head";
+
 import BookList from "../components/BookList";
 import CustomError from "../lib/customError";
 import getBooks from "../lib/getBooks";
@@ -23,9 +25,16 @@ const Home: NextPage = () => {
   });
 
   return (
-    <div>
+    <>
+      <Head>
+        <title>BookParison - Avalie avaliações de livros</title>
+        <meta
+          name="description"
+          content="Avalie avaliações de livros de forma simples e rápida, sem sair do nosso app."
+        />
+      </Head>
       <BookList books={data?.results ?? []} />
-    </div>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ interface Props {
 const BookDetails: React.FC<Props> = ({ book }) => {
   return (
     <S.Container>
-      <S.CoverImg src={book.cover.url} alt="" />
+      <S.CoverImg src={book.cover?.url} alt="" />
       <div>
         <S.Title>{book.name}</S.Title>
         <S.Author>por {book.author}</S.Author>
