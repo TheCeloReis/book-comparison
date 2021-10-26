@@ -1,4 +1,4 @@
-import BooksResponse from "../types/BooksResponse";
+import { BooksResponse } from "../types/api";
 import CustomError from "./customError";
 
 const getBooks = async (): Promise<BooksResponse> => {

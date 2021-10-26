@@ -3,7 +3,7 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 import BookList from "../components/BookList";
 import CustomError from "../lib/customError";
 import getBooks from "../lib/getBooks";
-import BooksResponse from "../types/BooksResponse";
+import { BooksResponse } from "../types/api";
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();

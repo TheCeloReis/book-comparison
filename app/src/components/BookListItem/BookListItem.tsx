@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 
-import { Book } from "../../types/BooksResponse";
+import { Book } from "../../types/api";
 
 import * as S from "./BookListItem.styled";
 import StarRating from "../StarRating";

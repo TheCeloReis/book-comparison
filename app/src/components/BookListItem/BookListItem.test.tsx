@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "../../lib/test.utils";
-import { Book } from "../../types/BooksResponse";
+import { Book } from "../../types/api";
 
 import BookListItem from ".";
 

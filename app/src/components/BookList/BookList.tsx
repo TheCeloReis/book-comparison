@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import sortByDateString from "../../lib/sortByDateString";
 
-import { Book } from "../../types/BooksResponse";
+import { Book } from "../../types/api";
 import BookListItem from "../BookListItem";
 
 import * as S from "./BookList.styled";
