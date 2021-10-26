@@ -6,6 +6,8 @@ import { SSRProvider } from "@react-aria/ssr";
 
 import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/theme";
+import Appbar from "../components/Appbar";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(
@@ -25,7 +27,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Hydrate state={pageProps.dehydratedState}>
           <GlobalStyle />
           <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
+            <Appbar />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </ThemeProvider>
         </Hydrate>
       </SSRProvider>
