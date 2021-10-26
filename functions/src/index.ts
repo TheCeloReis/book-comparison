@@ -21,6 +21,7 @@ app.get("/api/books", async (req, res) => {
 
     const booksWithGoodReads = booksResponse.results.map((book) => {
       const review = reviews.data.books.find(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (review: any) =>
           review.isbn === book.isbn || review.isbn13 === book.isbn
       );
