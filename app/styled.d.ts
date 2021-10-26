@@ -64,5 +64,9 @@ declare module "styled-components" {
     color: Colors;
     space: Spacing;
     fontSize: FontSizes;
+
+    sizes: {
+      maxWidth: string;
+    };
   }
 }

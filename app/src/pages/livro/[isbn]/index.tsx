@@ -3,6 +3,7 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 import { useRouter } from "next/router";
 
 import { getBook, getBooks } from "../../../lib/api";
+import BookDetails from "../../../components/BookDetails";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const queryClient = new QueryClient();
@@ -38,7 +39,15 @@ const Home: NextPage = () => {
     getBook(router.query.isbn as string)
   );
 
-  return <div></div>;
+  if (!data?.result) {
+    return null;
+  }
+
+  return (
+    <div>
+      <BookDetails book={data.result} />
+    </div>
+  );
 };
 
 export default Home;
