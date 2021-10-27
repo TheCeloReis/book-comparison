@@ -5,6 +5,7 @@ import Head from "next/head";
 
 import { getBook, getBooks } from "../../../lib/api";
 import BookDetails from "../../../components/BookDetails";
+import ReviewComparison from "../../../components/ReviewComparison";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const queryClient = new QueryClient();
@@ -40,20 +41,23 @@ const Home: NextPage = () => {
     getBook(router.query.isbn as string)
   );
 
-  if (!data?.result) {
+  const book = data?.result;
+  if (!book) {
     return null;
   }
 
   return (
     <div>
       <Head>
-        <title>BookParison - {data.result.name}</title>
+        <title>BookParison - {book.name}</title>
         <meta
           name="description"
           content="Avalie avaliações de livros de forma simples e rápida, sem sair do nosso app."
         />
       </Head>
-      <BookDetails book={data.result} />
+      <BookDetails book={book!} />
+
+      <ReviewComparison book={book} />
     </div>
   );
 };

@@ -8,10 +8,12 @@ import * as S from "./StarRating.styled";
 interface Props {
   numRatings: number;
   totalRatings: number;
+  hideValue?: boolean;
 }
 
 const StarRating: React.FC<Props> = (props) => {
-  const rating = props.totalRatings / props.numRatings;
+  const rating =
+    props.numRatings !== 0 ? props.totalRatings / props.numRatings : 0;
 
   const fullStars = Math.floor(rating);
   const halfStars = rating % 1 >= 0.5 ? 1 : 0;
@@ -30,7 +32,9 @@ const StarRating: React.FC<Props> = (props) => {
           <StarBorder size="1rem" key={index} data-testid="empty-star" />
         ))}
       </S.StarContainer>
-      <S.StarValue> {rating.toFixed(2)} / 5</S.StarValue>
+      {props.hideValue ? null : (
+        <S.StarValue> {rating.toFixed(2)} / 5</S.StarValue>
+      )}
     </S.Container>
   );
 };
