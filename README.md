@@ -1,4 +1,6 @@
-# Frontend para comparação de notas de livros
+# Comparação de notas de livros
+
+Site: https://tag-challenge.web.app/
 
 ## Pricipais tecnologias
 
@@ -49,6 +51,13 @@ Na pasta `/function` consta o script
 - `yarn run lint`
 
 ### IDE
+
+Recomendado usar VSCode com as extensões especificadas em `/.vscode/extensions.json`
+
+- Prettier
+- Eslint
+- Styled Componentes
+- Jest Test Runner
 
 ## Deploy
 
